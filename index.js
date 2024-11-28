@@ -52,7 +52,7 @@ function translate(word) {
 translateForm.addEventListener('submit', (e) => {
     e.preventDefault();
     if (translateInput.value.trim() == '') {
-        toggleElVisibility(errorMsg);
+        errorMsg.style.display = "block";
     } else {
         errorMsg.style.display = "none";
         const translateResult = translate(translateInput.value);

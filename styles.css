@@ -1,7 +1,7 @@
 .main {
     margin: 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 15px;
 
 }
@@ -10,10 +10,6 @@
     position: relative
 }
 
-.dictionary_input-div {
-    display: flex;
-    flex-direction: column;
-}
 
 /* .input {
     background: #fff;

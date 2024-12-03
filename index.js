@@ -64,7 +64,7 @@ async function translate(word) {
     const result = dictionary.find(item => {
         const enWords = item.en.split(',').map(w => w.trim());
         if (enWords.some(enWord => word.toLowerCase() === enWord.toLowerCase())) return true;
-        
+
         const ruWords = item.ru.split(',').map(w => w.trim());
         return ruWords.some(ruWord =>
             word.toLowerCase() === ruWord.toLowerCase()
@@ -72,9 +72,9 @@ async function translate(word) {
     });
 
     if (!result) return 'Слово не найдено';
-    
+
     // Если ввели русское слово - возвращаем все английские варианты
-    if (result.ru.split(',').map(w => w.trim()).some(ruWord => 
+    if (result.ru.split(',').map(w => w.trim()).some(ruWord =>
         word.toLowerCase() === ruWord.toLowerCase()
     )) {
         return result.en;
@@ -82,13 +82,6 @@ async function translate(word) {
     // Если ввели английское слово - возвращаем русские варианты
     return result.ru;
 }
-
-console.log(await translate("fly"));
-console.log(await translate("окно"));
-console.log(await translate("FLY"));
-console.log(await translate("notaword"));
-
-
 
 translateForm.addEventListener('submit', async (e) => {
     e.preventDefault();
